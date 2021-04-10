@@ -48,6 +48,11 @@ public class CommandFuck implements CommandExecutor {
 		return true;
 	}
 
+	/**
+	 * Returns a Map of various god enchants
+	 *
+	 * @return {@link Map} of Enchantment, Integer - Enchantment, Integer=level
+	 */
 	private Map<Enchantment, Integer> getGodEnchants(){
 		Map<Enchantment, Integer> enchantments = new HashMap<>();
 
