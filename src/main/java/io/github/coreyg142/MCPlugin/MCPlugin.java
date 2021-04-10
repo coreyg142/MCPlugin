@@ -9,7 +9,7 @@ public class MCPlugin extends JavaPlugin {
 
 	@Override
 	public void onEnable(){
-		getLogger().info("onEnable is called!");
+		getLogger().info("Plugin is initialized!");
 
 		Objects.requireNonNull(this.getCommand("fuck")).setExecutor(new CommandFuck());
 	}
