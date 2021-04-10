@@ -19,9 +19,9 @@ import java.util.Map;
  *
  * @author Corey Gross
  */
-public class CommandFuck implements CommandExecutor {
+public class CommandKit implements CommandExecutor {
 	/**The message to send the player after execution*/
-	private final static String MESSAGE = (ChatColor.DARK_PURPLE + "" + ChatColor.BOLD +
+	private final static String DIAMOND_MESSAGE = (ChatColor.DARK_PURPLE + "" + ChatColor.BOLD +
 			"You have been blessed with The Diamond");
 	/**The name of the Diamond*/
 	private final static String DIAMOND_NAME = (ChatColor.BOLD + "" + ChatColor.AQUA + "" + ChatColor.MAGIC + "asd" +
@@ -30,22 +30,29 @@ public class CommandFuck implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-		if(commandSender instanceof Player){
+		if(commandSender instanceof Player && strings.length > 0){
 			Player player = (Player) commandSender;
 
-			ItemStack diamond = new ItemStack(Material.DIAMOND);
-
-			diamond.addUnsafeEnchantments(getGodEnchants());
-			ItemMeta diamondMeta = diamond.getItemMeta();
-			assert diamondMeta != null;
-			diamondMeta.setDisplayName(DIAMOND_NAME);
-
-			diamond.setItemMeta(diamondMeta);
-			player.getInventory().addItem(diamond);
-			player.sendMessage(MESSAGE);
+			if(player.hasPermission("MCPlugin.kit.diamond") && strings[0].equals("diamond")) {
+				player.getInventory().addItem(kitDiamond());
+				player.sendMessage(DIAMOND_MESSAGE);
+				return true;
+			}
 		}
 
-		return true;
+		return false;
+	}
+
+	private ItemStack kitDiamond(){
+		ItemStack diamond = new ItemStack(Material.DIAMOND);
+
+		diamond.addUnsafeEnchantments(getGodEnchants());
+		ItemMeta diamondMeta = diamond.getItemMeta();
+		assert diamondMeta != null;
+		diamondMeta.setDisplayName(DIAMOND_NAME);
+
+		diamond.setItemMeta(diamondMeta);
+		return diamond;
 	}
 
 	/**

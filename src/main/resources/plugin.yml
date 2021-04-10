@@ -6,7 +6,27 @@ description: This is a description of this plugin
 api-version: 1.16
 
 commands:
-  fuck:
-    description: A fucking good command
-    usage: /fuck
-    permission: MCPlugin.fuck
+  kit:
+    description: Kits
+    usage: /kit [kit]
+    permission: MCPlugin.kit
+    permission-message: You do not have access to this command.
+#  list2:
+#    description: Print out a list of online players
+#    usage: /list2
+#    permission: MCPlugin.list
+
+permissions:
+  MCPlugin.kit:
+    description: Access to kits command
+    default: true
+  MCPlugin.kit.diamond:
+    description: Access to the god diamond
+    default: op
+    permission-message: You do not have access to this command.
+  MCPlugin.list:
+    description: Access to list2 command
+    default: true
+  MCPlugin.*:
+    default: false
+    description: All permissions
