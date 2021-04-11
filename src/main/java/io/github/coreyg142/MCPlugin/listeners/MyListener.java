@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.EnderDragon;
+Chimport org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,7 +21,7 @@ public class MyListener implements Listener {
 
 
 		if (player.getInventory().getItemInMainHand().getType() == Material.DIAMOND_HOE && block == Material.OBSIDIAN) {
-			EnderDragon enderDragon = world.spawn(player.getLocation(), EnderDragon.class, e -> e.setPhase(EnderDragon.Phase.CIRCLING));
+			world.spawnEntity(loc, EntityType.WITHER);
 		}
 	}
 
