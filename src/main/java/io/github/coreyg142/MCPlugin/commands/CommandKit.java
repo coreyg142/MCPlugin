@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * The command executor for the /fuck command
+ * The command executor for the /kit command
  * Gives the player a diamond with god enchantments.
  *
  * @author Corey Gross
