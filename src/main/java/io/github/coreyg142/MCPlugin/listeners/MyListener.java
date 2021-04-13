@@ -12,7 +12,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 public class MyListener implements Listener {
 
 	@EventHandler
-	public void onBlockBreak(BlockBreakEvent event) {
+	public void onDiamondHoeBreakObsidian(BlockBreakEvent event) {
 		Player player = event.getPlayer();
 		Material block = event.getBlock().getType();
 		World world = player.getWorld();
