@@ -1,7 +1,7 @@
 name: MCPlugin
 main: io.github.coreyg142.MCPlugin.MCPlugin
 version: 0.2
-author: ThatOneLegion
+author: coreyg142
 description: This is a description of this plugin
 api-version: 1.16
 
